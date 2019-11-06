@@ -1,3 +1,3 @@
-# angular-ngrx-todo
+# Angular NgRx Todo
 
-Todo application using Angular with NgRx
+Todo application using Angular with NgRx.
