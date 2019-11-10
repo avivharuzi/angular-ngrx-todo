@@ -1,14 +1,19 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 
-import { Todo } from '../shared/todo';
 import * as TodoActions from './todo.actions';
+import { Todo } from '../shared/todo';
+import { TodoFilter } from '../shared/todo-filter.enum';
 
-export interface State extends EntityState<Todo> {}
+export interface State extends EntityState<Todo> {
+  filter: TodoFilter;
+}
 
 export const adapter: EntityAdapter<Todo> = createEntityAdapter<Todo>();
 
-export const initialState: State = adapter.getInitialState({});
+export const initialState: State = adapter.getInitialState({
+  filter: TodoFilter.All,
+});
 
 const todoReducer = createReducer(
   initialState,
@@ -18,6 +23,9 @@ const todoReducer = createReducer(
   on(TodoActions.updateTodo, (state, { todo }) => {
     return adapter.updateOne(todo, state);
   }),
+  on(TodoActions.updateTodos, (state, { updates }) => {
+    return adapter.updateMany(updates, state);
+  }),
   on(TodoActions.deleteTodo, (state, { id }) => {
     return adapter.removeOne(id, state);
   }),
@@ -26,6 +34,12 @@ const todoReducer = createReducer(
   }),
   on(TodoActions.clearTodos, state => {
     return adapter.removeAll({ ...state });
+  }),
+  on(TodoActions.updateFilter, (state, { filter }) => {
+    return {
+      ...state,
+      filter,
+    };
   })
 );
 
@@ -33,4 +47,8 @@ export function reducer(state: State, action: Action) {
   return todoReducer(state, action);
 }
 
-export const selectAllTodos = adapter.getSelectors().selectAll;
+const { selectAll, selectTotal } = adapter.getSelectors();
+
+export const selectAllTodos = selectAll;
+
+export const selectTotalTodos = selectTotal;
