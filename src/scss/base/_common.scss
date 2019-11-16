@@ -1,0 +1,20 @@
+@import './../abstracts';
+
+html,
+body {
+  background: $background-body;
+  height: 100%;
+  color: $color-body;
+  font-family: $font-primary;
+}
+
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+}

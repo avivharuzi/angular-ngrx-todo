@@ -1,0 +1,54 @@
+$color-white: #fff;
+$color-black: #000;
+
+$color-gray-50: #f5f7fa;
+$color-gray-100: #e4e7eb;
+$color-gray-200: #cbd2d9;
+$color-gray-300: #9aa5b1;
+$color-gray-400: #7b8794;
+$color-gray-500: #616e7c;
+$color-gray-600: #52606d;
+$color-gray-700: #3e4c59;
+$color-gray-800: #323f4b;
+$color-gray-900: #1f2933;
+
+$color-indigo-50: #e0e8f9;
+$color-indigo-100: #bed0f7;
+$color-indigo-200: #98aeeb;
+$color-indigo-300: #7b93db;
+$color-indigo-400: #647acb;
+$color-indigo-500: #4c63b6;
+$color-indigo-600: #4055a8;
+$color-indigo-700: #35469c;
+$color-indigo-800: #2d3a8c;
+$color-indigo-900: #19216c;
+
+$color-red-500: #e12d39;
+
+$size-0: 0;
+$size-1: 1px;
+$size-2: 2px;
+$size-4: 4px;
+$size-8: 8px;
+$size-12: 12px;
+$size-16: 16px;
+$size-24: 24px;
+$size-32: 32px;
+$size-64: 64px;
+$size-128: 128px;
+$size-256: 256px;
+$size-512: 512px;
+
+$size-xs: $size-4;
+$size-sm: $size-8;
+$size-md: $size-12;
+$size-lg: $size-16;
+$size-xl: $size-32;
+
+$font-roboto: 'Roboto', sans-serif;
+
+$background-body: #fafafa;
+$color-body: $color-gray-900;
+$font-primary: $font-roboto;
+$color-primary-lightest: $color-indigo-50;
+$color-primary: $color-indigo-500;
