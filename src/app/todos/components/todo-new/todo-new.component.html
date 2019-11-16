@@ -1,0 +1,19 @@
+<div class="d-flex flex-row">
+  <button
+    [style.pointer-events]="(totalTodos$ | async) > 0 ? null : 'none'"
+    class="d-flex align-items-center justify-content-center"
+    (click)="toggleAll()"
+  >
+    <i
+      [style.visibility]="(totalTodos$ | async) > 0 ? null : 'hidden'"
+      class="material-icons"
+      >keyboard_arrow_down</i
+    >
+  </button>
+  <input
+    type="text"
+    #text
+    (keyup.enter)="text.value = addTodo(text.value)"
+    placeholder="Whats need to be done?"
+  />
+</div>

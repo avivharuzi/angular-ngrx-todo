@@ -1,0 +1,26 @@
+@import '~src/scss/abstracts';
+
+button.outline {
+  color: $color-gray-300;
+  padding: $size-2 $size-12;
+  border-radius: $size-xs;
+  margin: $size-0 $size-8;
+  border: $size-1 solid $color-white;
+
+  &:hover {
+    border: $size-1 solid $color-primary-lightest;
+  }
+
+  &.active {
+    border: $size-1 solid $color-primary;
+  }
+}
+
+button.underline {
+  color: $color-gray-300;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: $color-primary-lightest;
+  }
+}

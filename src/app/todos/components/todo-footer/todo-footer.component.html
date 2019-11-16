@@ -1,0 +1,44 @@
+<ng-container *ngIf="totalTodos$ | async">
+  <div class="row p-3">
+    <div
+      class="col-12 mb-3 mb-md-0 col-md-4 d-flex justify-content-md-start align-items-center"
+    >
+      <p class="color-muted m-0">
+        {{ todosLeftToComplete$ | async }} items left
+      </p>
+    </div>
+
+    <div class="col-12 mb-3 mb-md-0 col-md-4 d-flex justify-content-md-center">
+      <button
+        class="outline"
+        (click)="updateFilter(todoFilter.All)"
+        [ngClass]="{ active: (filter$ | async) === todoFilter.All }"
+      >
+        All
+      </button>
+      <button
+        class="outline"
+        (click)="updateFilter(todoFilter.Active)"
+        [ngClass]="{ active: (filter$ | async) === todoFilter.Active }"
+      >
+        Active
+      </button>
+      <button
+        class="outline"
+        (click)="updateFilter(todoFilter.Completed)"
+        [ngClass]="{ active: (filter$ | async) === todoFilter.Completed }"
+      >
+        Completed
+      </button>
+    </div>
+
+    <div
+      class="col-12 col-md-4 d-flex justify-content-md-end align-items-center"
+      *ngIf="totalTodosCompleted$ | async"
+    >
+      <button class="underline" (click)="clearCompleted()">
+        Clear completed
+      </button>
+    </div>
+  </div>
+</ng-container>

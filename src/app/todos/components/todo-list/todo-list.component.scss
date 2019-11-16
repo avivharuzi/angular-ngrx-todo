@@ -1,0 +1,25 @@
+@import '~src/scss/abstracts';
+
+.todo {
+  font-size: $size-16;
+  border-radius: $size-xs;
+
+  .todo-text {
+    width: 90%;
+
+    p {
+      &.done {
+        text-decoration: line-through;
+        color: $color-gray-400;
+      }
+    }
+  }
+
+  .todo-side {
+    width: 5%;
+  }
+}
+
+button.close {
+  color: $color-red-500;
+}

@@ -1,0 +1,27 @@
+@import '~src/scss/abstracts';
+
+button {
+  background: $color-gray-50;
+  border-top-left-radius: $size-xs;
+  border-bottom-left-radius: $size-xs;
+  padding: $size-0;
+  width: 5%;
+}
+
+input[type='text'] {
+  border: none;
+  padding: $size-sm $size-lg;
+  font-size: $size-16;
+  border-top-right-radius: $size-xs;
+  border-bottom-right-radius: $size-xs;
+  background: $color-gray-50;
+  width: 97.5%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $color-gray-400;
+  }
+}
