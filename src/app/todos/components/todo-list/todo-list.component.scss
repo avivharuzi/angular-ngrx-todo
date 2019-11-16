@@ -13,6 +13,18 @@
         color: $color-gray-400;
       }
     }
+
+    input {
+      outline: none;
+      border: 1px solid $color-gray-100;
+      width: 100%;
+      border-radius: $size-xs;
+
+      &:focus {
+        border-color: $color-primary;
+        box-shadow: 0 0 0 0.125em $color-primary-lightest;
+      }
+    }
   }
 
   .todo-side {

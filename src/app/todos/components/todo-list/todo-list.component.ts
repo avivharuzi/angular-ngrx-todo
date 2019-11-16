@@ -34,4 +34,25 @@ export class TodoListComponent implements OnInit {
   deleteTodo(id: string): void {
     this.store.dispatch(TodoActions.deleteTodo({ id }));
   }
+
+  editTodo(todo: Todo, isNeedToEdit: boolean): void {
+    const todoUpdate: Update<Todo> = {
+      id: todo.id,
+      changes: { text: todo.text, editing: isNeedToEdit },
+    };
+    this.store.dispatch(TodoActions.updateTodo({ todo: todoUpdate }));
+  }
+
+  updateTodo(todo: Todo, text: string): void {
+    if (text === '') {
+      this.deleteTodo(todo.id);
+      return;
+    }
+
+    const todoUpdate: Update<Todo> = {
+      id: todo.id,
+      changes: { text, editing: false },
+    };
+    this.store.dispatch(TodoActions.updateTodo({ todo: todoUpdate }));
+  }
 }

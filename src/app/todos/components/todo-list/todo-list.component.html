@@ -11,7 +11,22 @@
       />
     </div>
     <div class="todo-text">
-      <p class="p-0 m-0 py-2 px-3" [ngClass]="{ done: todo.complete }">
+      <input
+        class="py-2 px-3"
+        type="text"
+        #text
+        *ngIf="todo.editing"
+        [value]="todo.text"
+        (keydown.escape)="editTodo(todo, false)"
+        (keydown.enter)="updateTodo(todo, text.value)"
+        (blur)="updateTodo(todo, text.value)"
+      />
+      <p
+        class="p-0 m-0 py-2 px-3"
+        *ngIf="!todo.editing"
+        [ngClass]="{ done: todo.complete }"
+        (dblclick)="editTodo(todo, true)"
+      >
         {{ todo.text }}
       </p>
     </div>
