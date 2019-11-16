@@ -8,12 +8,13 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:prod": "ng build --prod",
+    "build:prod": "ng build --prod --base-href=\"/angular-ngrx-todo/\"",
     "test:without-watch": "ng test --watch false",
     "prettier:check": "prettier --check \"**/*.{ts,js,css,scss,html,json,md}\"",
     "prettier:watch": "onchange \"**/*.{ts,js,css,scss,html,json,md}\" -- prettier --write {{changed}}",
     "prettier:write": "prettier --write \"**/*.{ts,js,css,scss,html,json,md}\"",
-    "pretty-quick": "pretty-quick --staged --pattern \"**/*.{ts,js,css,scss,html,json,md}\""
+    "pretty-quick": "pretty-quick --staged --pattern \"**/*.{ts,js,css,scss,html,json,md}\"",
+    "publish": "npm run build:prod && angular-cli-ghpages --dir=dist/angular-ngrx-todo"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +44,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "@types/uuid": "^3.4.6",
+    "angular-cli-ghpages": "^0.6.0",
     "codelyzer": "^5.0.0",
     "husky": "^3.0.9",
     "jasmine-core": "~3.4.0",
